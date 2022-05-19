@@ -12,6 +12,9 @@ module.exports = function(grunt) {
     case "tutorials":
       PROJECT_DIR = envJSON.TUTORIALS_DIR;
       break;
+    case "torchdyn":
+      PROJECT_DIR = envJSON.TORCHDYN_DIR;
+      break;
    }
 
   grunt.initConfig({

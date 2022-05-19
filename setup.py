@@ -33,18 +33,18 @@ def package_files(directory:str):
 
 
 setup(
-    name = 'pt_lightning_sphinx_theme',
+    name = 'torchdyn_sphinx_theme',
     version =__version__,
-    author = 'Shift Lab',
+    author = 'Syntensor',
     author_email= 'info@shiftlabny.com',
     url="https://github.com/pytorch/lightning_sphinx_theme",
     docs_url="https://github.com/pytorch/lightning_sphinx_theme",
-    description='PyTorch Sphinx Theme',
-    py_modules = ['pt_lightning_sphinx_theme'],
-    packages = ['pt_lightning_sphinx_theme', 'pt_lightning_sphinx_theme.extensions'],
+    description='Torchdyn Sphinx Theme',
+    py_modules = ['torchdyn_sphinx_theme'],
+    packages = ['torchdyn_sphinx_theme', 'torchdyn_sphinx_theme.extensions'],
     include_package_data=True,
     zip_safe=False,
-    package_data={'pt_lightning_sphinx_theme': [
+    package_data={'torchdyn_sphinx_theme': [
         'theme.conf',
         '*.html',
         'theme_variables.jinja',
