@@ -920,3 +920,9 @@
   background-color: hover_background;
   color: $color_primary;
 }
+
+.colab {
+   > img {
+     width: auto !important;
+   }
+}
