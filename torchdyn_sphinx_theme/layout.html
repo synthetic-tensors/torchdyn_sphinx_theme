@@ -105,6 +105,10 @@
 
   {% include "fonts.html" %}
   <script defer src="https://use.fontawesome.com/releases/v6.1.1/js/all.js" integrity="sha384-xBXmu0dk1bEoiwd71wOonQLyH+VpgR1XcDH3rtxrLww5ajNTuMvBdL5SOiFZnNdp" crossorigin="anonymous"></script>
+
+  <script script type="text/javascript">
+    var collapsedSections = [''];
+  </script>
 </head>
 
 <div class="container-fluid header-holder tutorials-header" id="header-holder">
@@ -163,10 +167,10 @@
               toctree is empty. Skip building this for now.
             #}
             {% if 'singlehtml' not in builder %}
-              {% set global_toc = toctree(maxdepth=1,
-                                          collapse=theme_collapse_navigation|tobool,
-                                          includehidden=theme_includehidden|tobool,
-                                          titles_only=theme_titles_only|tobool) %}
+              {% set global_toc = toctree(maxdepth=2,
+                                          collapse=true,
+                                          includehidden=False,
+                                          titles_only=False) %}
             {% endif %}
             {% if global_toc %}
               {{ global_toc }}
