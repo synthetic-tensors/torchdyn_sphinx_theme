@@ -1,0 +1,103 @@
+@import "torchdyn_vars";
+@import "torchdyn_typography";
+
+body {
+  font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+p,
+ul li,
+ol li,
+dl dt,
+dl dd,
+blockquote {
+  font-weight: 200;
+}
+
+.colab {
+  > img {
+    width: auto !important;
+  }
+}
+
+.tutorials-header .main-menu ul li a {
+  @include copyCaps;
+}
+.tutorials-header .main-menu ul li a:hover {
+  color: var(--primary-lightest);
+}
+
+ul.pytorch-breadcrumbs li {
+  @include h5;
+}
+
+ul.pytorch-breadcrumbs a {
+  color: var(--primary-lightest);
+}
+
+article.pytorch-article {
+  p,
+  ul li,
+  ol li,
+  dl dt,
+  dl dd,
+  blockquote {
+    @include copySmall;
+    color: var(--transparent-dark);
+    font-weight: 300;
+  }
+
+  h1 {
+    @include h3;
+    color: var(--primary-dark);
+    text-transform: none;
+  }
+
+  h2 {
+    @include h4;
+  }
+
+  h3 {
+    @include h5;
+  }
+
+  div.nbinput.container div.prompt pre {
+    color: var(--primary-lightest);
+  }
+
+  img {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+/* sidebars */
+.pytorch-left-menu a:link.reference.internal,
+.pytorch-left-menu a:visited.reference.internal,
+.pytorch-left-menu a:hover.reference.internal,
+.pytorch-right-menu a:link.reference.internal,
+.pytorch-right-menu a:visited.reference.internal,
+.pytorch-right-menu a:hover.reference.internal {
+  @include copySmall;
+  color: var(--primary-dark);
+}
+
+.pytorch-right-menu .pytorch-side-scroll > ul > li > a.reference.internal,
+.pytorch-left-menu p.caption {
+  @include copyCaps;
+  color: var(--primary-dark);
+}
+
+/* highlight of active page in the left-hand side menu */
+.pytorch-left-menu a.reference.internal.current {
+  color: var(--primary-lightest);
+}
+
+.pytorch-left-menu li.toctree-l1.current > a:before,
+.pytorch-right-menu li.toctree-l1.current > a:before {
+  background-color: var(--primary-lightest);
+}

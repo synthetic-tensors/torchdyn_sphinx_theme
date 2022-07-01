@@ -2,7 +2,7 @@ import os
 
 from setuptools import setup
 from io import open
-from pt_lightning_sphinx_theme import __version__
+from torchdyn_sphinx_theme import __version__
 
 
 def package_files(directory:str):
@@ -36,9 +36,9 @@ setup(
     name = 'torchdyn_sphinx_theme',
     version =__version__,
     author = 'Syntensor',
-    author_email= 'info@shiftlabny.com',
-    url="https://github.com/pytorch/lightning_sphinx_theme",
-    docs_url="https://github.com/pytorch/lightning_sphinx_theme",
+    author_email= 'zdenek@syntensor.com',
+    url="https://github.com/zdenek-syntensor/torchdyn_sphinx_theme",
+    docs_url="https://github.com/zdenek-syntensor/torchdyn_sphinx_theme",
     description='Torchdyn Sphinx Theme',
     py_modules = ['torchdyn_sphinx_theme'],
     packages = ['torchdyn_sphinx_theme', 'torchdyn_sphinx_theme.extensions'],
@@ -48,11 +48,11 @@ setup(
         'theme.conf',
         '*.html',
         'theme_variables.jinja',
-        *package_files('pt_lightning_sphinx_theme/static')
+        *package_files('torchdyn_sphinx_theme/static')
     ]},
     entry_points = {
         'sphinx.html_themes': [
-            'pt_lightning_sphinx_theme = pt_lightning_sphinx_theme',
+            'torchdyn_sphinx_theme = torchdyn_sphinx_theme',
         ]
     },
     license= 'MIT License',
