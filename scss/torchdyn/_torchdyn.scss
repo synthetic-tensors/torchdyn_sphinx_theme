@@ -32,7 +32,7 @@ blockquote {
 }
 
 ul.pytorch-breadcrumbs li {
-  @include h5;
+  @include copySmall;
 }
 
 ul.pytorch-breadcrumbs a {
