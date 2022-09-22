@@ -14068,4 +14068,20 @@ article.pytorch-article img {
   background-color: var(--primary-lightest);
 }
 
+/* more marging for copyright at the bottom */
+.sphinx-credits {
+  margin: 1rem 0;
+}
+
+/* fix overflap in class signature */
+article.pytorch-article .class dt {
+  padding-left: 5em;
+}
+
+article.pytorch-article .class dt em.property {
+  position: absolute;
+  left: 0.2rem;
+  top: 0.3rem;
+}
+
 /*# sourceMappingURL=theme.css.map */
