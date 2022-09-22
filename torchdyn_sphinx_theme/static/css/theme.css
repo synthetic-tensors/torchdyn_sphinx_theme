@@ -14078,6 +14078,12 @@ article.pytorch-article .class dt {
   padding-left: 5em;
 }
 
+/* for nested dt with no class (e.g. "Parameters" heading) */
+article.pytorch-article .class dl dt {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 article.pytorch-article .class dt em.property {
   position: absolute;
   left: 0.2rem;
