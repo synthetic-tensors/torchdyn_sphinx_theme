@@ -205,8 +205,8 @@ Once these are successful, navigate to the `conf.py` file in each project. In th
 In `conf.py` change the html theme to `pt_lightning_sphinx_theme` and point the html theme path to this repo's local folder, which will end up looking something like:
 
 ```
-html_theme = 'pt_lightning_sphinx_theme'
-html_theme_path = ["../../../lightning_sphinx_theme"]
+html_theme = 'torchdyn_sphinx_theme'
+html_theme_path = ["../../torchdyn_sphinx_theme"]
 ```
 
 Next create a file `.env.json` in the root of the THEME repo with some keys/values referencing the local folders of the Docs and Tutorials repos:
@@ -214,7 +214,8 @@ Next create a file `.env.json` in the root of the THEME repo with some keys/valu
 ```
 {
   "TUTORIALS_DIR": "../tutorials",
-  "DOCS_DIR": "../pytorch_lightning/docs/source"
+  "DOCS_DIR": "../pytorch_lightning/docs/source",
+  "TORCHDYN_DIR": "../torchdyn/docs/"
 }
 
 ```
@@ -229,6 +230,12 @@ or
 
 ```
 grunt --project=tutorials
+```
+
+or
+
+```
+grunt --project=torchdyn
 ```
 
 These will generate a live-reloaded local build for the respective projects available at `localhost:1919` .
@@ -272,3 +279,14 @@ html_theme_options = {
   ...
 }
 ```
+
+## Publish theme on pypi
+
+Update version number at [./torchdyn_sphinx_theme/__init__.py](./torchdyn_sphinx_theme/__init__.py) and then run:
+
+```
+python setup.py bdist_wheel
+python -m twine upload dist/*
+```
+
+You'll be asked for the pypi credentials, ask zdenek@syntensor.com if you need help.
