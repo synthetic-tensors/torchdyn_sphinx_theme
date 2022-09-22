@@ -12350,7 +12350,6 @@ article.pytorch-article .math img {
 }
 @media screen and (min-width: 1600px) {
   .pytorch-breadcrumbs-wrapper {
-    width: 850px;
     margin-left: 1.875rem;
   }
 }
@@ -13879,6 +13878,216 @@ article.pytorch-article .tutorials-callout-container .btn.callout-button a {
 .header-holder .main-menu ul li a.nav-dropdown-item:hover .dropdown-title {
   background-color: hover_background;
   color: #792ee5;
+}
+
+.colab > img {
+  width: auto !important;
+}
+
+:root {
+  /* 8, 16, 24, 32, 40, 56, 80, 104, 176 */
+  --space-xxs: 0.5rem; /* 8px */
+  --space-xs: 0.75rem; /* 12px */
+  --space-sm: 1rem; /* 16px */
+  --space-md: 1.5rem; /* 24px */
+  --space-lg: 2rem; /* 32px */
+  --space-xl: 2.5rem; /* 40px */
+  --space-xxl: 3.5rem; /* 56px */
+  --space-xxxl: 5rem; /* 80px */
+  --space-xxxxl: 6.5rem; /* 104px */
+  --space-xxxxxl: 11rem; /* 176px */
+}
+
+:root {
+  --primary-dark: #3f1a70;
+  --primary-light: #692bbb;
+  --primary-lightest: #9446FC;
+  --secondary-dark: #ff7755;
+  --secondary-light: #ff9977;
+  --background-light: #ffffff;
+  --background-brand: #281046;
+  --background-dark: #000000;
+  --background-gray: #ebedf3;
+  --transparent-dark: rgba(0, 0, 0, 0.5);
+  --transparent-light: rgba(0, 0, 0, 0.25);
+  --status-red: #f8ded8;
+  --status-blue: #dfe8ff;
+  --status-green: #e9f5e4;
+}
+
+body {
+  font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+p,
+ul li,
+ol li,
+dl dt,
+dl dd,
+blockquote {
+  font-weight: 200;
+}
+
+.colab > img {
+  width: auto !important;
+}
+
+.tutorials-header .main-menu ul li a {
+  font-size: 0.625rem;
+  line-height: 1.8;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: var(--font-primary);
+}
+@media only screen and (min-width: 900px) {
+  .tutorials-header .main-menu ul li a {
+    font-size: var(--space-xs);
+  }
+}
+
+.tutorials-header .main-menu ul li a:hover {
+  color: var(--primary-lightest);
+}
+
+ul.pytorch-breadcrumbs li {
+  font-size: 0.8125rem;
+  line-height: 1.8;
+  font-family: var(--font-primary);
+  color: var(--transparent-dark);
+}
+ul.pytorch-breadcrumbs a {
+  color: var(--primary-lightest);
+}
+
+article.pytorch-article p,
+article.pytorch-article ul li,
+article.pytorch-article ol li,
+article.pytorch-article dl dt,
+article.pytorch-article dl dd,
+article.pytorch-article blockquote {
+  font-size: 0.8125rem;
+  line-height: 1.8;
+  font-family: var(--font-primary);
+  color: var(--transparent-dark);
+  color: var(--transparent-dark);
+  font-weight: 300;
+}
+article.pytorch-article h1 {
+  font-family: var(--font-primary);
+  font-weight: 300;
+  color: var(--primary-dark);
+  letter-spacing: normal;
+  font-size: var(--space-md);
+  font-weight: 350;
+  line-height: 1.4;
+  color: var(--primary-dark);
+  text-transform: none;
+}
+@media only screen and (min-width: 900px) {
+  article.pytorch-article h1 {
+    font-size: var(--space-lg);
+    line-height: 1.2;
+  }
+}
+article.pytorch-article h2 {
+  font-family: var(--font-primary);
+  font-weight: 300;
+  color: var(--primary-dark);
+  letter-spacing: normal;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+@media only screen and (min-width: 900px) {
+  article.pytorch-article h2 {
+    font-size: var(--space-md);
+    line-height: 1.4;
+  }
+}
+article.pytorch-article h3 {
+  font-family: var(--font-primary);
+  font-weight: 300;
+  color: var(--primary-dark);
+  letter-spacing: normal;
+  font-size: 1rem;
+  font-weight: 400;
+}
+@media only screen and (min-width: 900px) {
+  article.pytorch-article h3 {
+    font-size: 1.125rem;
+    line-height: 1.4;
+  }
+}
+article.pytorch-article div.nbinput.container div.prompt pre {
+  color: var(--primary-lightest);
+}
+article.pytorch-article img {
+  width: 100%;
+  max-width: 500px;
+}
+
+/* sidebars */
+.pytorch-left-menu a:link.reference.internal,
+.pytorch-left-menu a:visited.reference.internal,
+.pytorch-left-menu a:hover.reference.internal,
+.pytorch-right-menu a:link.reference.internal,
+.pytorch-right-menu a:visited.reference.internal,
+.pytorch-right-menu a:hover.reference.internal {
+  font-size: 0.8125rem;
+  line-height: 1.8;
+  font-family: var(--font-primary);
+  color: var(--transparent-dark);
+  color: var(--primary-dark);
+}
+.pytorch-right-menu .pytorch-side-scroll > ul > li > a.reference.internal,
+.pytorch-left-menu p.caption {
+  font-size: 0.625rem;
+  line-height: 1.8;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: var(--font-primary);
+  color: var(--primary-dark);
+}
+@media only screen and (min-width: 900px) {
+  .pytorch-right-menu .pytorch-side-scroll > ul > li > a.reference.internal,
+.pytorch-left-menu p.caption {
+    font-size: var(--space-xs);
+  }
+}
+
+/* highlight of active page in the left-hand side menu */
+.pytorch-left-menu a.reference.internal.current {
+  color: var(--primary-lightest);
+}
+
+.pytorch-left-menu li.toctree-l1.current > a:before,
+.pytorch-right-menu li.toctree-l1.current > a:before {
+  background-color: var(--primary-lightest);
+}
+
+/* more marging for copyright at the bottom */
+.sphinx-credits {
+  margin: 1rem 0;
+}
+
+/* fix overflap in class signature */
+article.pytorch-article .class dt {
+  padding-left: 5em;
+}
+
+/* for nested dt with no class (e.g. "Parameters" heading) */
+article.pytorch-article .class dl dt {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+article.pytorch-article .class dt em.property {
+  position: absolute;
+  left: 0.2rem;
+  top: 0.3rem;
 }
 
 /*# sourceMappingURL=theme.css.map */

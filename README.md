@@ -1,17 +1,21 @@
-# PyTorch-Lightning Sphinx Theme
+# Torchdyn Sphinx Theme
 
-Sphinx theme for [PyTorch-Lightning Docs](https://pytorch-lightning.readthedocs.io/en/latest/) based on the [Read the Docs Sphinx Theme](https://sphinx-rtd-theme.readthedocs.io/en/latest).
+Sphinx theme for [TorchDyn Docs](https://torchdyn.readthedocs.io/en/latest/) based on the [PyTorch Lightning Sphinx Theme](https://pytorch-lightning.readthedocs.io/en/latest).
 
 ## Setup the project for local development
+
 This theme requires running both python commands and javascript (npm) commands.
 
 ### Step 0: Make sure you're on the conda environment you are using for pytorch-lightning
+
 ```bash
 conda activate my-pl-env
 ```
 
 ### Step 1: Python setup
+
 First, install all the docs deps for lightning
+
 ```bash
 cd /path/to/pytorch-lightning
 
@@ -21,6 +25,7 @@ pip install -r requirements/docs.txt
 ```
 
 Setup the lightning_sphinx_theme
+
 ```
 cd /path/to/lightning_sphinx_theme
 
@@ -32,6 +37,7 @@ pip install -r docs/requirements.txt
 ```
 
 If you're on a mac with conda, and you get this error:
+
 ```
 >> Pandoc wasn't found.
 >> Please check that pandoc is installed:
@@ -40,13 +46,16 @@ If you're on a mac with conda, and you get this error:
 ```
 
 then try the following command ([from this answer](https://stackoverflow.com/questions/62398231/building-docs-fails-due-to-missing-pandoc))
+
 ```
 pip uninstall pandoc
 conda install pandoc
 ```
 
 ### Step 2: setup the javascript things 🤮 
+
 First, install the things in package.json
+
 ```bash
 # run yarn install (uses `package.json`)
 # you need node version 8.4.0
@@ -60,6 +69,7 @@ npm install
 ```
 
 For good measure, make sure your npm and ruby paths are in your .bashrc or .zshrc 
+
 ```bash
 # ruby
 export PATH="/usr/local/opt/ruby/bin:$PATH"
@@ -68,12 +78,14 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH=/usr/local/share/npm/bin:$PATH
 ```
 
-Make sure `grunt` works (we use grunt to see changes in real-time... ie: `hot-reload`)
+Make sure `grunt` works (we use grunt to see changes in real-time... ie: `hot-reload` )
+
 ```bash
 grunt
 ```
 
 Install a few npm packages
+
 ```bash
 # provides hot reload for dev
 sudo npm install -g grunt-cli 
@@ -83,6 +95,7 @@ sudo npm install -g sass
 ```
 
 ## Link the theme to the Lightning docs
+
 Create an `.env.json` file that connects this theme to the lightning docs.
 
 ```bash
@@ -91,6 +104,7 @@ touch .env.json
 ```
 
 Now copy paste the following into the `.env.json`
+
 ```json
 {
     "DOCS_DIR": "path/to/pytorch_lightning/docs/source/"
@@ -98,6 +112,7 @@ Now copy paste the following into the `.env.json`
 ```
 
 ## Development
+
 Run the docs this way
 
 ```
@@ -115,11 +130,11 @@ export PL_FAST_DOCS_DEV=0
 export PL_FAST_DOCS_DEV=1
 ```
 
-
 ### Optional: build the demo docs
+
 The lightning_sphinx_theme repo has a "demo" project (not lightning docs) that show you the styles very quickly.
 
-First add the following entry to `.env.json`. 
+First add the following entry to `.env.json` . 
 
 ```json
 {
@@ -164,8 +179,8 @@ Once that is successful commit the change to Github.
 
 To be able to modify and preview the theme locally against the PyTorch Lightning Docs and/or the PyTorch Lightning Tutorials first clone the repositories:
 
-- [PyTorch Lightning (Docs)](https://github.com/pytorch/pytorch)
-- [PyTorch Lightning Tutorials](https://github.com/pytorch/tutorials)
+* [PyTorch Lightning (Docs)](https://github.com/pytorch/pytorch)
+* [PyTorch Lightning Tutorials](https://github.com/pytorch/tutorials)
 
 Then follow the instructions in each repository to make the docs.
 
@@ -185,13 +200,13 @@ make html
 make html
 ```
 
-Once these are successful, navigate to the `conf.py` file in each project. In the Docs these are at `./docs/source`. The Tutorials one can be found in the root directory.
+Once these are successful, navigate to the `conf.py` file in each project. In the Docs these are at `./docs/source` . The Tutorials one can be found in the root directory.
 
 In `conf.py` change the html theme to `pt_lightning_sphinx_theme` and point the html theme path to this repo's local folder, which will end up looking something like:
 
 ```
-html_theme = 'pt_lightning_sphinx_theme'
-html_theme_path = ["../../../lightning_sphinx_theme"]
+html_theme = 'torchdyn_sphinx_theme'
+html_theme_path = ["../../torchdyn_sphinx_theme"]
 ```
 
 Next create a file `.env.json` in the root of the THEME repo with some keys/values referencing the local folders of the Docs and Tutorials repos:
@@ -199,7 +214,8 @@ Next create a file `.env.json` in the root of the THEME repo with some keys/valu
 ```
 {
   "TUTORIALS_DIR": "../tutorials",
-  "DOCS_DIR": "../pytorch_lightning/docs/source"
+  "DOCS_DIR": "../pytorch_lightning/docs/source",
+  "TORCHDYN_DIR": "../torchdyn/docs/"
 }
 
 ```
@@ -209,13 +225,20 @@ You can then build the Docs or Tutorials by running
 ```
 grunt --project=docs
 ```
+
 or
 
 ```
 grunt --project=tutorials
 ```
 
-These will generate a live-reloaded local build for the respective projects available at `localhost:1919`.
+or
+
+```
+grunt --project=torchdyn
+```
+
+These will generate a live-reloaded local build for the respective projects available at `localhost:1919` .
 
 Note that while live reloading works these two projects are hefty and will take a few seconds to build and reload, especially the Docs.
 
@@ -247,7 +270,7 @@ html_context = {
 
 ### Top/Mobile Navigation
 
-The top navigation and mobile menu expect an "active" state for one of the menu items. To ensure that either "Docs" or "Tutorials" is marked as active, set the following config value in the respective `conf.py`, where `{project}` is either `"docs"` or `"tutorials"`.
+The top navigation and mobile menu expect an "active" state for one of the menu items. To ensure that either "Docs" or "Tutorials" is marked as active, set the following config value in the respective `conf.py` , where `{project}` is either `"docs"` or `"tutorials"` .
 
 ```
 html_theme_options = {
@@ -256,3 +279,14 @@ html_theme_options = {
   ...
 }
 ```
+
+## Publish theme on pypi
+
+Update version number at [./torchdyn_sphinx_theme/__init__.py](./torchdyn_sphinx_theme/__init__.py) and then run:
+
+```
+python setup.py bdist_wheel
+python -m twine upload dist/*
+```
+
+You'll be asked for the pypi credentials, ask zdenek@syntensor.com if you need help.

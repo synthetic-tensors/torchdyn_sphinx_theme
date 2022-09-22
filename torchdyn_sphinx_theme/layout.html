@@ -105,83 +105,21 @@
 
   {% include "fonts.html" %}
   <script defer src="https://use.fontawesome.com/releases/v6.1.1/js/all.js" integrity="sha384-xBXmu0dk1bEoiwd71wOonQLyH+VpgR1XcDH3rtxrLww5ajNTuMvBdL5SOiFZnNdp" crossorigin="anonymous"></script>
+
+  <script script type="text/javascript">
+    var collapsedSections = [''];
+  </script>
 </head>
 
 <div class="container-fluid header-holder tutorials-header" id="header-holder">
   <div class="container">
     <div class="header-container">
-      <a class="header-logo" href="{{ theme_variables.external_urls['home'] }}" aria-label="PyTorch Lightning">
-      <!--  <img class="call-to-action-img" src="{{ pathto('_static/images/logo-lightning-icon.png', 1) }}"/> -->
+      <a class="header-logo" style="background-image:url({{ pathto(theme_logo, 1) }})" href="{{ theme_variables.external_urls['home'] }}" aria-label="PyTorch Lightning">
+       <!-- <img class="call-to-action-img" src="{{ pathto('_static/images/logo-lightning-icon.png', 1) }}"/> -->
       </a>
 
       <div class="main-menu">
-        <ul>
-          <li>
-            <a href="{{ theme_variables.external_urls['get_started'] }}">Get Started</a>
-          </li>
-
-          <li>
-            <a href="{{ theme_variables.external_urls['blog'] }}">Blog</a>
-          </li>
-
-          <li {%- if theme_pytorch_project == 'docs' %} class="active docs-active"{% endif %}>
-            <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
-              <a class="resource-option with-down-orange-arrow">
-                Docs
-              </a>
-              <div class="resources-dropdown-menu">
-                <a class="doc-dropdown-option nav-dropdown-item" href="https://pytorch-lightning.readthedocs.io/en/stable/">
-                  <span class="dropdown-title">PyTorch Lightning</span>
-                </a>
-                <a class="doc-dropdown-option nav-dropdown-item" href="https://torchmetrics.readthedocs.io/en/stable/">
-                  <span class="dropdown-title">TorchMetrics</span>
-                </a>
-                <a class="doc-dropdown-option nav-dropdown-item" href="https://lightning-flash.readthedocs.io/en/stable/">
-                  <span class="dropdown-title">Lightning Flash</span>
-                </a>
-                <a class="doc-dropdown-option nav-dropdown-item" href="https://lightning-transformers.readthedocs.io/en/stable/">
-                  <span class="dropdown-title">Lightning Transformers</span>
-                </a>
-                <a class="doc-dropdown-option nav-dropdown-item" href="https://lightning-bolts.readthedocs.io/en/stable/">
-                  <span class="dropdown-title">Lightning Bolts</span>
-                </a>
-            </div>
-          </li>
-
-          <!--<li>
-            <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
-              <a class="resource-option with-down-arrow">
-                Resources
-              </a>
-              <div class="resources-dropdown-menu">
-                <a class="nav-dropdown-item" href="{{ theme_variables.external_urls['community'] }}">
-                  <span class="dropdown-title">Community</span>
-                  <p>Join the PyTorch developer community to contribute, learn, and get your questions answered.</p>
-                </a>
-                <a class="nav-dropdown-item" href="{{ theme_variables.external_urls['resources'] }}">
-                  <span class="dropdown-title">Developer Resources</span>
-                  <p>Find resources and get questions answered</p>
-                </a>
-                <a class="nav-dropdown-item" href="{{ theme_variables.external_urls['forums'] }}" target="_blank">
-                  <span class="dropdown-title">Forums</span>
-                  <p>A place to discuss PyTorch code, issues, install, research</p>
-                </a>
-                <a class="nav-dropdown-item" href="{{ theme_variables.external_urls['hub'] }}">
-                  <span class="dropdown-title">Models (Beta)</span>
-                  <p>Discover, publish, and reuse pre-trained models</p>
-                </a>
-              </div>
-            </div>
-          </li>-->
-
-          <li>
-            <a href="{{ theme_variables.external_urls['github'] }}">GitHub</a>
-          </li>
-
-          <li>
-            <a href="https://www.grid.ai/">Train on the cloud</a>
-          </li>
-        </ul>
+        {% include "menu.html" %}
       </div>
 
       <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
@@ -229,10 +167,10 @@
               toctree is empty. Skip building this for now.
             #}
             {% if 'singlehtml' not in builder %}
-              {% set global_toc = toctree(maxdepth=1,
-                                          collapse=theme_collapse_navigation|tobool,
-                                          includehidden=theme_includehidden|tobool,
-                                          titles_only=theme_titles_only|tobool) %}
+              {% set global_toc = toctree(maxdepth=2,
+                                          collapse=true,
+                                          includehidden=False,
+                                          titles_only=False) %}
             {% endif %}
             {% if global_toc %}
               {{ global_toc }}
@@ -472,7 +410,7 @@
     <div class="container-fluid">
       <div class="container">
         <div class="mobile-main-menu-header-container">
-          <a class="header-logo" href="{{ theme_variables.external_urls['home'] }}" aria-label="PyTorch Lightning"></a>
+          <a class="header-logo" style="background-image:url({{ pathto(theme_logo, 1) }})" href="{{ theme_variables.external_urls['home'] }}" aria-label="PyTorch Lightning"></a>
           <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
         </div>
       </div>
@@ -480,75 +418,7 @@
 
     <div class="mobile-main-menu-links-container">
       <div class="main-menu">
-        <ul>
-          <li>
-            <a href="{{ theme_variables.external_urls['get_started'] }}">Get Started</a>
-          </li>
-
-          <li>
-            <a href="{{ theme_variables.external_urls['blog'] }}">Blog</a>
-          </li>
-
-          <li class="resources-mobile-menu-title" {%- if theme_pytorch_project == 'docs' %} class="active"{%- endif %}>
-            Ecosystem
-          </li>
-
-          <ul class="resources-mobile-menu-items">
-            <li>
-              <a href="https://pytorch-lightning.readthedocs.io/en/stable/">PyTorch Lightning</a>
-            </li>
-
-            <li>
-              <a href="https://torchmetrics.readthedocs.io/en/stable/">TorchMetrics</a>
-            </li>
-
-            <li>
-              <a href="https://lightning-flash.readthedocs.io/en/stable/">Lightning Flash</a>
-            </li>
-
-            <li>
-              <a href="https://lightning-transformers.readthedocs.io/en/stable/">Lightning Transformers</a>
-            </li>
-
-            <li>
-              <a href="https://lightning-bolts.readthedocs.io/en/stable/">Lightning Bolts</a>
-            </li>
-          </ul>
-
-          <!--<li class="resources-mobile-menu-title">
-            Resources
-          </li>
-
-          <ul class="resources-mobile-menu-items">
-            <li>
-              <a href="{{ theme_variables.external_urls['resources'] }}">Developer Resources</a>
-            </li>
-
-            <li>
-              <a href="{{ theme_variables.external_urls['features'] }}">About</a>
-            </li>
-
-            <li>
-              <a href="{{ theme_variables.external_urls['hub'] }}">Models (Beta)</a>
-            </li>
-
-            <li>
-              <a href="{{ theme_variables.external_urls['community'] }}">Community</a>
-            </li>
-
-            <li>
-              <a href="{{ theme_variables.external_urls['forums'] }}">Forums</a>
-            </li>
-          </ul>-->
-
-          <li>
-            <a href="{{ theme_variables.external_urls['github'] }}">Github</a>
-          </li>
-
-          <li>
-            <a href="https://www.grid.ai/">Grid.ai</a>
-          </li>
-        </ul>
+        {% include "mob_menu.html" %}
       </div>
     </div>
   </div>
