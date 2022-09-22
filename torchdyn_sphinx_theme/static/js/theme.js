@@ -690,7 +690,7 @@ window.sideMenus = {
   }
 };
 
-},{}],"pt-lightning-sphinx-theme":[function(require,module,exports){
+},{}],"torchdyn_sphinx_theme":[function(require,module,exports){
 var jQuery = (typeof(window) != 'undefined') ? window.jQuery : require('jquery');
 
 // Sphinx theme nav state
@@ -1159,4 +1159,4 @@ $(window).scroll(function () {
 });
 
 
-},{"jquery":"jquery"}]},{},[1,2,3,4,5,6,7,8,9,10,"pt-lightning-sphinx-theme"]);
+},{"jquery":"jquery"}]},{},[1,2,3,4,5,6,7,8,9,10,"torchdyn_sphinx_theme"]);
